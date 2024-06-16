@@ -48,10 +48,10 @@ export class LoginComponent implements OnInit{
     // way 1
     if(this.loginObj.userName == 'user123' && this.loginObj.password =='user@123') {
       localStorage.setItem('role','user');
-      this.router.navigateByUrl('user-dashboard');
+      this.router.navigateByUrl('home');
     } else if (this.loginObj.userName == 'admin' && this.loginObj.password =='admin@123') {
       localStorage.setItem('role','admin');
-      this.router.navigateByUrl('admin-dash');
+      this.router.navigateByUrl('home');
     }
     //way 2
 

@@ -1,5 +1,4 @@
 import { CommonModule } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -12,7 +11,7 @@ import { Router } from '@angular/router';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent implements OnInit{
-  constructor(private router: Router, private http: HttpClient){}
+  constructor(private router: Router){}
   loginObj: any = {
     UserId: 0,
     UserName:'',
@@ -31,21 +30,21 @@ export class LoginComponent implements OnInit{
   ngOnInit(): void {
   }
   onRegister() {
-    this.http.post("http://localhost:61334/api/Registration/Register", this.registerObj).subscribe(res=>{
+    // this.http.post("http://localhost:61334/api/Registration/Register", this.registerObj).subscribe(res=>{
 
-    })
+    // })
   }
   onLogin(){
     debugger;
-    this.http.post("http://localhost:61334/api/Registration/Login", this.loginObj).subscribe((response: any)=>{
-      debugger;
-      if(response.result) {
-        alert(response.message)
-        this.router.navigateByUrl('way2user-dashboard');
-      } else {
-        alert(response.message)
-      }
-    })
+    // this.http.post("http://localhost:61334/api/Registration/Login", this.loginObj).subscribe((response: any)=>{
+    //   debugger;
+    //   if(response.result) {
+    //     alert(response.message)
+    //     this.router.navigateByUrl('way2user-dashboard');
+    //   } else {
+    //     alert(response.message)
+    //   }
+    // })
     // way 1
     if(this.loginObj.userName == 'user123' && this.loginObj.password =='user@123') {
       localStorage.setItem('role','user');

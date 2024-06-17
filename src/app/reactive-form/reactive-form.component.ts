@@ -32,6 +32,14 @@ export class ReactiveFormComponent implements OnInit {
       mobile: new FormControl(),
 
     });
+
+    this.regForm.get('firstName')?.valueChanges.subscribe( data =>{
+      console.log("changes are ",data);
+    })
+
+    this.regForm.statusChanges.subscribe( data =>{
+      console.log("status changes are ",data);
+    })
   }
 
   register(){

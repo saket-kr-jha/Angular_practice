@@ -1,0 +1,17 @@
+<h1> Reactive Form </h1>
+<div class="form-container">
+    <form [formGroup] = "regForm" (ngSubmit)="register()">
+        <div>
+            First Name : <input type="text" name="firstName" placeholder="Enter your name" formControlName = "firstName" >
+        </div>
+        <div>
+            Last Name : <input type="text" name="lastName" placeholder="Enter your last name" formControlName = "lastName">
+        </div>
+        <div>
+            Email ID: <input type="text" name="email" placeholder="Enter your Email Id" formControlName = "email">
+        </div>
+        <div>
+            <input type="submit" value="Register">
+        </div>
+    </form>
+</div>

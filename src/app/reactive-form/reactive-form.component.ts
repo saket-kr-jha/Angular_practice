@@ -1,10 +1,11 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-form',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './reactive-form.component.html',
   styleUrl: './reactive-form.component.scss'
 })
@@ -25,7 +26,7 @@ export class ReactiveFormComponent implements OnInit {
 
     this.regForm = this._fb.group({
       id: new FormControl(),
-      firstName: new FormControl(),
+      firstName: ['', Validators.required],
       lastName: new FormControl(),
       email: new FormControl(),
       mobile: new FormControl(),

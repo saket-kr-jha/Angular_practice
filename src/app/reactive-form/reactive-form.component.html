@@ -3,6 +3,9 @@
     <form [formGroup] = "regForm" (ngSubmit)="register()">
         <div>
             First Name : <input type="text" name="firstName" placeholder="Enter your name" formControlName = "firstName" >
+            <span *ngIf="regForm.controls['firstName'].hasError('required')">
+                Its required
+            </span>
         </div>
         <div>
             Last Name : <input type="text" name="lastName" placeholder="Enter your last name" formControlName = "lastName">
